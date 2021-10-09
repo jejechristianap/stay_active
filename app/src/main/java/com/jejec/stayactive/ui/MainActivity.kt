@@ -1,33 +1,30 @@
 package com.jejec.stayactive.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.jejec.stayactive.R
-import com.jejec.stayactive.db.RunDAO
+import com.jejec.stayactive.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+    /**
+     * # What is Dagger?
+     * Dagger is dependency injection
+     *
+     * # What is dependency?
+     * Kotlin object or variable,
+     * if objectA relies on objectB
+     * then objectB is a dependency of objectA
+     * */
 
-    @Inject
-    lateinit var runDAO: RunDAO
+    private lateinit var bind: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        bind = ActivityMainBinding.inflate(layoutInflater)
 
-        Log.d("run_dao", "runDao hashCode = ${runDAO.hashCode()}")
-
-        /**
-         * # What is Dagger?
-         * Dagger is dependency injection
-         *
-         * # What is dependency?
-         * Kotlin object or variable,
-         * if objectA relies on objectB
-         * then objectB is a dependency of objectA
-         * */
+        setSupportActionBar(bind.toolbar)
     }
 }
