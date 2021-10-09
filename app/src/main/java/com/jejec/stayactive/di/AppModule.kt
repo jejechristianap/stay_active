@@ -42,7 +42,7 @@ object AppModule {
         app,
         RunningDatabase::class.java,
         RUNNING_DATABASE_NAME
-    )
+    ).build()
 
     /**
      * With Dagger when you provide running database "db" as parameter
