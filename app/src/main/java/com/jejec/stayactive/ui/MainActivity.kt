@@ -1,8 +1,9 @@
-package com.jejec.stayactive
+package com.jejec.stayactive.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.jejec.stayactive.R
 import com.jejec.stayactive.db.RunDAO
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
