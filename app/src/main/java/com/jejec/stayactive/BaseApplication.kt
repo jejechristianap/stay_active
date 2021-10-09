@@ -2,9 +2,16 @@ package com.jejec.stayactive
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
+import timber.log.Timber
 
 @HiltAndroidApp
-class BaseApplication: Application()
+class BaseApplication: Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+        Timber.plant(Timber.DebugTree())
+    }
+}
 /**
  * This class will notice your app to use Dagger-Hilt
  * as Dependencies Injection tools
