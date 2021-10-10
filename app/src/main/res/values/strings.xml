@@ -7,6 +7,21 @@
     <string name="welcoming_text">Hello there!\nPlease enter your name and weight</string>
     <string name="fab">FAB</string>
     <string name="sort_by">Sort by:</string>
+    <string name="submit">Submit</string>
+    <string name="please_input_your_name">Please input your name</string>
+    <string name="please_input_your_weight_kg">Please input your weight (KG)</string>
+    <string name="total_distance">Total Distance</string>
+    <string name="zero_km">0 Km</string>
+    <string name="zero_kmh">0 Km/h</string>
+    <string name="total_time">Total Time</string>
+    <string name="zero_time">00:00:00</string>
+    <string name="total_calories_burned">Total Calories Burned</string>
+    <string name="zero_kcal">0 KCal</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="your_weight">Your Weight</string>
+    <string name="your_name">Your Name</string>
+    <string name="start">Start</string>
+    <string name="finish_run">Finish Run</string>
     <string-array name="filter_options">
         <item>Date</item>
         <item>Running Time</item>
