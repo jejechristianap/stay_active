@@ -1,12 +1,9 @@
 package com.jejec.stayactive.ui
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -45,12 +42,11 @@ class MainActivity : AppCompatActivity() {
                 when (destination.id) {
                     R.id.settingFragment, R.id.runFragment, R.id.statisticFragment -> {
 //                        bind.bottomNavigationView.visibility = View.VISIBLE
-                        bind.bottomNavigationView.isVisible
-
+                        bind.bottomNavigationView.isVisible = true
                     }
                     else -> {
 //                        bind.bottomNavigationView.visibility = View.GONE
-                        bind.bottomNavigationView.isGone
+                        bind.bottomNavigationView.isVisible = false
                     }
                 }
             }

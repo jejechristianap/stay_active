@@ -7,9 +7,12 @@ plugins {
     id 'dagger.hilt.android.plugin'
 }
 
-def localPropertiesFile = rootProject.file("local.properties")
-def localProperties = new Properties()
-localProperties.load(new FileInputStream(localPropertiesFile))
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('local.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+def MAPS_API_KEY = keystoreProperties.getProperty('segment.MAPS_API_KEY')
 
 android {
     compileSdk 30
@@ -21,8 +24,8 @@ android {
         versionCode 1
         versionName "1.0"
 
-        buildConfigField "String", "MAPS_API_KEY", localProperties['MAPS_API_KEY']
-
+//        buildConfigField "String", "MAPS_API_KEY", localProperties['MAPS_API_KEY']
+        manifestPlaceholders = [MAPS_API_KEY: MAPS_API_KEY]
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
